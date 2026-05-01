@@ -11,13 +11,13 @@ namespace NightVisionConfig
         public static NightVisionConfig Instance { get; private set; } = null!;
         internal new static ManualLogSource Logger { get; private set; } = null!;
         internal static Harmony? Harmony { get; set; }
-        public static ConfigEntry<float> lightIntensity;
-        public static ConfigEntry<float> lightRange;
+        public static ConfigEntry<float> lightIntensity = null!;
+        public static ConfigEntry<float> lightRange = null!;
 
         private void Awake()
         {
-            lightIntensity = Config.Bind("General", "Night Vision Light Intensity", 366.9317f, "Intensity of the night vision light.");
-            lightRange = Config.Bind("General", "Night Vision Light Range", 12f, "Range of the night vision light.");
+            lightIntensity = Config.Bind("General", "Night Vision Light Intensity", 343.0585f, "Intensity of the night vision light.");
+            lightRange = Config.Bind("General", "Night Vision Light Range", 10.25f, "Range of the night vision light.");
 
             Logger = base.Logger;
             Instance = this;
